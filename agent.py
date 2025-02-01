@@ -17,10 +17,10 @@ GENERATE THE RESPONSE ONLY!
 """
 
 
-def send_chat():
+def send_chat(turn):
     print("Generating.....")
     audio_file = genai.upload_file(
-        path="audio.wav"
+        path=f"audio-{turn}.wav"
     )
     response = chat.send_message([prompt, audio_file])
     for chunk in response:
@@ -33,4 +33,4 @@ def send_chat():
             split_pattern=r'\n+'
         )
         for i, (gs, ps, audio) in enumerate(generator):
-            sf.write(f'agent-{i}.wav', audio, 24000)
+            sf.write(f'agent-{turn}.wav', audio, 24000)
