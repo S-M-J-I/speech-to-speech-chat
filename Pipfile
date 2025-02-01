@@ -13,6 +13,7 @@ transformers = {extras = ["torch"], version = "*"}
 kokoro = "*"
 playsound = "*"
 soundfile = "*"
+streamlit = "*"
 
 [dev-packages]
 
