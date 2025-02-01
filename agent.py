@@ -2,8 +2,9 @@ import google.generativeai as genai
 import os
 from kokoro import KPipeline
 import soundfile as sf
+import streamlit as st
 
-genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+genai.configure(api_key=st.secrets['GEMINI_API_KEY'])
 
 
 model = genai.GenerativeModel('gemini-1.5-flash')
